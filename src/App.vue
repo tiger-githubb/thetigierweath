@@ -6,7 +6,7 @@
       
       <div class="search-box">
         <input type="text" class="search-bar" placeholder="recherche" v-model="query" @keypress="fetchWeather"/>
-        <div class="sub-title">saisir le nom du pays ou ville dans la barre de recherche</div>
+        <div class="sub-title">saisir le nom de la ville dans la barre de recherche</div>
       </div>
       
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
@@ -49,8 +49,8 @@ export default {
     },
     dateBuilder () {
       let d = new Date();
-      let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      let months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+      let days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "vendredi", "Samedi"];
 
       let day = days[d.getDay()];
       let date = d.getDate();
