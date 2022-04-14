@@ -1,16 +1,14 @@
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main>
-      <div class="search-box">
-        <input 
-          type="text" 
-          class="search-bar" 
-          placeholder="recherche"
-          v-model="query"
-          @keypress="fetchWeather"
-        />
-      </div>
 
+      <div class="weather-title " >Bienvenue sur Tiger weather</div>
+      
+      <div class="search-box">
+        <input type="text" class="search-bar" placeholder="recherche" v-model="query" @keypress="fetchWeather"/>
+        <div class="sub-title">saisir le nom du pays ou ville dans la barre de recherche</div>
+      </div>
+      
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="location-box">
           <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -130,6 +128,23 @@ main {
   font-weight: 500;
   text-align: center;
   text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+}
+.weather-title {
+  color: #FFF;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+  padding: 5px 0px 5px 0px ;
+}
+
+.sub-title{
+  color: #FFF;
+  font-size: 10px;
+  font-weight: 300;
+  text-align: center;
+  
+  padding: 10px 0px 10px 0px ;
 }
 
 .location-box .date {
